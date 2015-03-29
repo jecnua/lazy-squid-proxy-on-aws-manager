@@ -9,7 +9,7 @@ def get_my_ip():
     session = requests.session()
     r = session.get('http://checkip.amazonaws.com/')
     ip = r.text
-    return ip
+    return ip.rstrip()
 
 def add_my_ip(conn, id):
     pass

@@ -11,3 +11,9 @@ settings.py.dist
 ##Use case
 
 - My dynamic ip changed
+
+##CON
+
+- You should only have one instance with that tag name
+- Only one IP on port 8888
+- Only port 8888
