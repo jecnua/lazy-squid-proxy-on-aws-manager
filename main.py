@@ -11,9 +11,13 @@ for reservation in reservations:
     for instance in instances:
         if instance.tags['Name'] == remote_tag_Name:
             print "{} : {} is {}".format(instance.id,instance.tags['Name'], instance.state)
-            #get_my_ip()
             if instance.state == 'running':
-                print ('want me to restart?')
-                stop(conn,'ss')
+                input_var = raw_input('want me to stop(s)/restart(r)/addip(a)?: ')
+                print ("You choose {}!".format(input_var))
+                if input_var == 'a':
+                    pass
+                else:
+                    pass
             else:
-                print ('want me to stop?')
+                print ('Instance not running')
+print ('Done')
