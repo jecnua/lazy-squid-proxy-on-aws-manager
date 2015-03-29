@@ -9,15 +9,15 @@ def get_my_ip():
     ip = r.text
     return ip.rstrip()
 
-def run(squid_port='8888'):
+def run(region, squid_port='8888'):
     isNecessaryToAdd = True
-    conn = boto.ec2.connect_to_region('eu-west-1',profile_name=local_profile_name)
+    conn = boto.ec2.connect_to_region(region,profile_name=local_profile_name)
     reservations = conn.get_all_reservations()
     for reservation in reservations:
         instances = reservation.instances
         for instance in instances:
-            if instance.tags['Name'] == remote_tag_Name:
-                print "{} : {} is {}".format(instance.id,instance.tags['Name'], instance.state)
+            if instance.tags[remote_tag_name] == remote_tag_value:
+                print "{} : {} is {}".format(instance.id,instance.tags[remote_tag_name], instance.state)
                 if instance.state == 'running':
                     input_var = raw_input('want me to stop(s)/restart(r)/addip(a)?: ')
                     print ("You choose {}!".format(input_var))
@@ -49,4 +49,4 @@ def run(squid_port='8888'):
                     print ('Instance not running')
     print ('Done')
 
-run(remote_squid_port)
+run(aws_region,remote_squid_port)

@@ -1,4 +1,6 @@
+#Example
 local_profile_name='my_profile'
-remote_tag_Name='tag_Name_value'
-remote_aws_region=''
+remote_tag_name='Name'
+remote_tag_value='SquidProxy'
+aws_region='eu-west-1'
 remote_squid_port='8888'
