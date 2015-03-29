@@ -12,8 +12,13 @@ settings.py.dist
 
 - My dynamic ip changed
 
+##PRO
+
+It works!
+
 ##CON
 
 - You should only have one instance with that tag name
-- Only one IP on port 8888
-- Only port 8888
+- Only one IP on given port
+
+##TODO
